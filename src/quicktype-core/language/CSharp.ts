@@ -480,6 +480,7 @@ export class CSharpRenderer extends ConvenienceRenderer {
             caseNames.push(name);
         });
         this.emitDescription(this.descriptionForType(e));
+        this.emitLine("[JsonConverter(typeof(StringEnumConverter))]");
         this.emitLine("public enum ", enumName, " { ", caseNames, " };");
     }
 
